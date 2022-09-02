@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "./form";
 import styles from "./Main.module.scss";
+import Water from "./water";
 
 export default function Main() {
   const [sexo, setSexo] = useState<string>("");
@@ -11,6 +12,7 @@ export default function Main() {
 
   return (
     <div>
+
       <Form
         setSexo={setSexo}
         setIdade={setIdade}
@@ -18,11 +20,7 @@ export default function Main() {
         setAltura={setAltura}
         setObjetivo={setObjetivo}
       />
-      <div> {sexo}</div>
-      <div> {idade}</div>
-      <div> {peso}</div>
-      <div> {altura}</div>
-      <div> {objetivo}</div>
+            <Water peso = {peso}/>
     </div>
   );
 }
