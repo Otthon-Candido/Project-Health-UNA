@@ -63,7 +63,7 @@ export default function Water(props: Props) {
           <p>{copos} copos de 300 ml por dia</p>
           <img src={Bottle} alt="" />
           <p>{garrafas} garrafas de 500 ml por dia</p>
-        </div>
+        </div> 
       ) : null}
     </div>
   );
