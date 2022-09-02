@@ -5,13 +5,14 @@ import WaterGlass from "../../../assets/waterGlass.svg";
 
 interface Props {
   peso: number | null;
+  cond: boolean
 }
 
 export default function Water(props: Props) {
   const [litros, setLitros] = useState<string | null>(null);
   const [copos, setCopos] = useState<string | null>(null);
-  const [cond, setCond] = useState<boolean | null>(false);
-  const { peso } = props;
+
+  const { peso, cond } = props;
 
   useEffect(() => {
     if (peso != null) {
@@ -38,7 +39,6 @@ export default function Water(props: Props) {
         setCopos(totalCopos.toFixed(1));
       }
 
-      setCond(true);
     }
   }, [peso]);
 
