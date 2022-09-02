@@ -6,6 +6,7 @@ interface Props {
   setPeso: React.Dispatch<React.SetStateAction<number | null>>;
   setAltura: React.Dispatch<React.SetStateAction<number | null>>;
   setObjetivo: React.Dispatch<React.SetStateAction<string>>;
+  setCond: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function Form({
@@ -14,6 +15,7 @@ export default function Form({
   setPeso,
   setAltura,
   setObjetivo,
+  setCond
 }: Props) {
   function handleSubmit(event: any) {
     event.preventDefault();
@@ -27,6 +29,7 @@ export default function Form({
     setPeso(Number(peso_.value));
     setAltura(Number(altura_.value));
     setObjetivo(objetivo_.value);
+    setCond(true);
   }
 
   return (
