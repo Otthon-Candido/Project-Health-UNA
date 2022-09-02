@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Main from './pages/main';
+import Form from './pages/main/form';
 
 
 const root = ReactDOM.createRoot(
@@ -8,7 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    
+   <Main/>
   </React.StrictMode>
 );
 
