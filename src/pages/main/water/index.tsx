@@ -11,6 +11,7 @@ interface Props {
 export default function Water(props: Props) {
   const [litros, setLitros] = useState<string | null>(null);
   const [copos, setCopos] = useState<string | null>(null);
+  const [garrafas, setGarrafas] = useState<string | null>(null);
 
   const { peso, cond } = props;
 
@@ -18,6 +19,7 @@ export default function Water(props: Props) {
     if (peso != null) {
       var totalLitros = (peso * 35) / 1000;
       var totalCopos = (peso * 35) / 300;
+      var totalGarrafas = (peso * 35) / 500;
 
       if (
         parseFloat(totalLitros.toFixed(1)) -
@@ -39,6 +41,16 @@ export default function Water(props: Props) {
         setCopos(totalCopos.toFixed(1));
       }
 
+      if (
+        parseFloat(totalGarrafas.toFixed(1)) -
+          parseFloat(totalGarrafas.toFixed(0)) ===
+        0
+      ) {
+        setGarrafas(totalGarrafas.toFixed(0));
+      } else {
+        setGarrafas(totalGarrafas.toFixed(1));
+      }
+
     }
   }, [peso]);
 
@@ -46,10 +58,11 @@ export default function Water(props: Props) {
     <div>
       {cond ? (
         <div>
-          <img src={Bottle} alt="" />
           <p>Seu consumo ideal é de {litros} litros de água por dia</p>
           <img src={WaterGlass} alt="" />
           <p>{copos} copos de 300 ml por dia</p>
+          <img src={Bottle} alt="" />
+          <p>{garrafas} garrafas de 500 ml por dia</p>
         </div>
       ) : null}
     </div>
