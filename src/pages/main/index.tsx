@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Form from "./form";
+import Imc from "./imc";
 import styles from "./Main.module.scss";
 import Sleep from "./sleep";
 import Water from "./water";
@@ -25,6 +26,7 @@ export default function Main() {
       />
             <Water peso = {peso} cond = {cond}/>
             <Sleep idade = {idade} cond = {cond}/>
+            <Imc   peso = {peso} altura = {altura} cond = {cond}/> 
     </div>
   );
 }
