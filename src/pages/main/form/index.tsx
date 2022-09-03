@@ -52,7 +52,7 @@ export default function Form({
 
         <input
           required
-          type="number"
+          type="text"
           id="peso"
           name="peso"
           placeholder="Peso"
@@ -60,7 +60,7 @@ export default function Form({
 
         <input
           required
-          type="number"
+          type="text"
           id="altura"
           name="altura"
           placeholder="Altura"

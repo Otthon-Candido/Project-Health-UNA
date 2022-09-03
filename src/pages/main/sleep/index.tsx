@@ -14,16 +14,16 @@ export default function Sleep(props: Props) {
   useEffect(() => {
     var typeIdade;
     if (idade != null) {
-      if (idade < 5) {
+      if (idade <= 5) {
         typeIdade = "crianca";
       }
-      if (idade < 13 && idade > 5) {
+      if (idade <= 13 && idade > 5) {
         typeIdade = "pre-adolescente";
       }
-      if (idade < 17 && idade > 14) {
+      if (idade <= 17 && idade > 14) {
         typeIdade = "adolescente";
       }
-      if (idade < 64 && idade > 18) {
+      if (idade <= 64 && idade > 18) {
         typeIdade = "adulto";
       }
       if (idade > 64) {
