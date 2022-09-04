@@ -62,21 +62,25 @@ export default function Imc(props: Props) {
 
   return (
     <div>
-      <p>Seu IMC é de: {calcImc}</p>
-      <div className={styles.flex}>
+      {cond ? (
         <div>
-          <p>{magro ? <div>{imcSituation}</div> : null}</p>
-          <img src={magroImg} alt="" />
+          <p>Seu IMC é de: {calcImc}</p>
+          <div className={styles.flex}>
+            <div>
+              <p>{magro ? <div>{imcSituation}</div> : null}</p>
+              <img src={magroImg} alt="" />
+            </div>
+            <div>
+              <p>{normal ? <div>{imcSituation}</div> : null}</p>
+              <img src={normalImg} alt="" />
+            </div>
+            <div>
+              <p>{obeso ? <div>{imcSituation}</div> : null}</p>
+              <img src={obesoImg} alt="" />
+            </div>
+          </div>
         </div>
-        <div>
-          <p>{normal ? <div>{imcSituation}</div> : null}</p>
-          <img src={normalImg} alt="" />
-        </div>
-        <div>
-          <p>{obeso ? <div>{imcSituation}</div> : null}</p>
-          <img src={obesoImg} alt="" />
-        </div>
-      </div>
+      ) : null}
     </div>
   );
 }

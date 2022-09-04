@@ -14,8 +14,11 @@ export default function Main() {
   const [cond, setCond] = useState<boolean>(false);
 
   return (
-    <div>
-
+    <div className={styles.container}>
+      <div>
+      <Water peso={peso} cond={cond} />
+      <Sleep idade={idade} cond={cond} />
+      </div>
       <Form
         setSexo={setSexo}
         setIdade={setIdade}
@@ -24,9 +27,7 @@ export default function Main() {
         setObjetivo={setObjetivo}
         setCond={setCond}
       />
-            <Water peso = {peso} cond = {cond}/>
-            <Sleep idade = {idade} cond = {cond}/>
-            <Imc   peso = {peso} altura = {altura} cond = {cond}/> 
+      <Imc peso={peso} altura={altura} cond={cond} />
     </div>
   );
 }
