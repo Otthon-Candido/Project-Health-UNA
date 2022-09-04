@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.titulo{
+    width: 180px;
+    padding-top: 16px;
+}
+
+.boxImc{
+    width: 387px;
+    height: 180px;
+    background-color: #3AE3CB;
+    color: white;
+
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.conteudoImc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+}
+
+.teste{
+    display: flex;
+}
+
+.textWater{
+    width: 85px;
+    padding-left: 8px solid white;
+}
+
+.bottleImg{
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+hr{
+    border: 1px solid white;
+    background-color: white;
+}

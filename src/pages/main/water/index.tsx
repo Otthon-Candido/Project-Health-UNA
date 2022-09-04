@@ -57,13 +57,18 @@ export default function Water(props: Props) {
   return (
     <div>
       {cond ? (
-        <div>
-          <p>Seu consumo ideal é de {litros} litros de água por dia</p>
-          <img src={WaterGlass} alt="" />
-          <p>{copos} copos de 300 ml por dia</p>
-          <img src={Bottle} alt="" />
-          <p>{garrafas} garrafas de 500 ml por dia</p>
-        </div> 
+        <div className={styles.boxImc}>
+            <div className={styles.conteudoImc}>
+              <p className={styles.titulo}>Seu consumo ideal é de: {litros} litros de água por dia</p>
+              <div className={styles.teste}>
+                <p className={styles.textWater}>{copos} copos de 300 ml por dia</p>
+                <img className={styles.bottleImg} src={WaterGlass} alt="" />
+                <hr />
+                <img src={Bottle} alt="" />
+                <p className={styles.textWater}>{garrafas} garrafas de 500 ml por dia</p>
+              </div> 
+            </div> 
+        </div>
       ) : null}
     </div>
   );
