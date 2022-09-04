@@ -45,7 +45,7 @@ export default function Form({
         <input
           required
           type="number"
-          min={0}
+          min={1}
           max={110}
           id="idade"
           name="idade"
@@ -62,10 +62,12 @@ export default function Form({
 
         <input
           required
-          type="text"
+          type="number"
+          min={100}
+          max={250}
           id="altura"
           name="altura"
-          placeholder="Altura"
+          placeholder="Altura (em cm)"
         />
 
         <select required name="select" id="select" placeholder="Objetivo">
