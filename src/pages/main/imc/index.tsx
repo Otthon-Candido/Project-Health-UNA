@@ -20,7 +20,7 @@ export default function Imc(props: Props) {
   var [normal, setNormal] = useState<boolean | null>(null);
   useEffect(() => {
     if (peso != null && altura != null) {
-      var imc = peso / (altura * altura);
+      var imc = peso / (altura/100 * altura/100);
       imc = parseFloat(imc.toFixed(2));
       setcalcImc(imc);
 
