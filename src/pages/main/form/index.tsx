@@ -33,18 +33,20 @@ export default function Form({
   }
 
   return (
-    <div>
-      <h1>Informe seus dados</h1>
+    <div className={styles.boxForm}>
+      <h1 className={styles.tituloFormulario}>Informe seus dados</h1>
       <form className={styles.form} onSubmit={(evento) => handleSubmit(evento)}>
         <select required name="sexo" id="sexo" placeholder="Sexo">
-          <option value="">Selecione</option>
-          <option>MASCULINO</option>
-          <option>FEIMININO</option>
+          <option value="">Sexo</option>
+          <option>Masculino</option>
+          <option>Feminino</option>
         </select>
 
         <input
           required
           type="number"
+          min={0}
+          max={110}
           id="idade"
           name="idade"
           placeholder="Idade"
@@ -67,12 +69,12 @@ export default function Form({
         />
 
         <select required name="select" id="select" placeholder="Objetivo">
-          <option value="">Selecione</option>
+          <option value="">Objetivo</option>
           <option>Emagrecer</option>
           <option>Engordar</option>
           <option>Manter Peso</option>
         </select>
-        <input type="submit" value="Enviar" />
+        <input className={styles.botao} type="submit" value="Enviar" />
       </form>
     </div>
   );
