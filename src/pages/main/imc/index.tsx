@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import styles from "./Imc.module.scss";
-import magroImg from "../../../assets/magro.svg";
-import normalImg from "../../../assets/normal.svg";
-import obesoImg from "../../../assets/obeso-colorido.svg";
+import magroImg from "../../../assets/magro.png";
+import normalImg from "../../../assets/normal.png";
+import obesoImg from "../../../assets/obeso.png";
+import magroColorImg from "../../../assets/magro-colorido.png";
+import normalColorImg from "../../../assets/normal-colorido.png";
+import obesoColorImg from "../../../assets/obeso-colorido.png";
 import classNames from "classnames";
 
 interface Props {
@@ -73,15 +76,30 @@ export default function Imc(props: Props) {
           <div className={styles.flex}>
             <div className={styles.grid}>
               <p>{magro ? <span>{imcSituation}</span> : null}</p>
-              <img src={magroImg} alt="" />
+              <div>
+                {
+                magro ? <img src={magroColorImg} alt="" /> : 
+                 <img src={magroImg} alt="" /> 
+                 }
+              </div>
             </div>
             <div className={styles.grid}>
               <p>{normal ? <span>{imcSituation}</span> : null}</p>
-              <img src={normalImg} alt="" />
+              <div>
+                {
+                normal ? <img src={normalColorImg} alt="" /> : 
+                 <img src={normalImg} alt="" /> 
+                }
+              </div>
             </div>
             <div className={styles.grid}>
               <p>{obeso ? <span>{imcSituation}</span> : null}</p>
-              <img src={obesoImg} alt="" />
+              <div>
+                {
+                obeso ? <img src={obesoColorImg} alt="" /> : 
+                 <img src={obesoImg} alt="" /> 
+                }
+              </div>
             </div>
           </div>
         </div>

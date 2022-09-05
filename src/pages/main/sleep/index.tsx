@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Sleep.module.scss";
-import sleepImg from "../../../assets/sleep.svg";
+import sleepImg from "../../../assets/sono.png";
 import classNames from "classnames";
 
 interface Props {
@@ -24,7 +24,7 @@ export default function Sleep(props: Props) {
       if (idade <= 17 && idade > 14) {
         typeIdade = "adolescente";
       }
-      if (idade <= 64 && idade > 18) {
+      if (idade <= 64 && idade >= 18) {
         typeIdade = "adulto";
       }
       if (idade > 64) {
