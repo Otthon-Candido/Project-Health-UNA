@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Water.module.scss";
-import Bottle from "../../../assets/bottle.svg";
-import WaterGlass from "../../../assets/waterGlass.svg";
+import Bottle from "../../../assets/garrafa-de-agua.png";
+import WaterGlass from "../../../assets/copo-de-agua.png";
 
 interface Props {
   peso: number | null;
