@@ -18,9 +18,10 @@ export default function Imc(props: Props) {
   var [magro, setMagro] = useState<boolean | null>(null);
   var [obeso, setObeso] = useState<boolean | null>(null);
   var [normal, setNormal] = useState<boolean | null>(null);
+  
   useEffect(() => {
     if (peso != null && altura != null) {
-      var imc = peso / (altura/100 * altura/100);
+      var imc = peso / (altura * altura);
       imc = parseFloat(imc.toFixed(2));
       setcalcImc(imc);
 

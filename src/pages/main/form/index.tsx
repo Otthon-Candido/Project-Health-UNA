@@ -32,6 +32,31 @@ export default function Form({
     setCond(true);
   }
 
+  function handleChange(id:string){
+
+    switch(id){
+
+      case 'idade':
+        var variavel: HTMLInputElement = document.getElementById(id) as HTMLInputElement
+        variavel.value = variavel.value.replace(/[^0-9]/g, '')
+        console.log( variavel.value)
+        break
+
+      case 'altura':
+        var variavel: HTMLInputElement = document.getElementById(id) as HTMLInputElement
+        variavel.value = variavel.value.replace(/[^0-9.,]/g, '').replace(/,/g,'.').replace(/(\..*?)\..*/g, '$1');
+        console.log( variavel.value)
+        break
+
+      case 'peso':
+        var variavel: HTMLInputElement = document.getElementById(id) as HTMLInputElement
+        variavel.value = variavel.value.replace(/[^0-9.,]/g, '').replace(/,/g,'.').replace(/(\..*?)\..*/g, '$1');
+        console.log( variavel.value)
+        break
+    }
+
+  }
+
   return (
     <div className={styles.boxForm}>
       <h1 className={styles.tituloFormulario}>Informe seus dados</h1>
@@ -43,13 +68,13 @@ export default function Form({
         </select>
 
         <input
+        
           required
-          type="number"
-          min={1}
-          max={110}
+          type="text"
           id="idade"
           name="idade"
           placeholder="Idade"
+          onChange={()=>handleChange('idade')}
         />
 
         <input
@@ -58,16 +83,16 @@ export default function Form({
           id="peso"
           name="peso"
           placeholder="Peso"
+          onChange={()=>handleChange('peso')}
         />
 
         <input
           required
-          type="number"
-          min={100}
-          max={250}
+          type="text"
           id="altura"
           name="altura"
-          placeholder="Altura (em cm)"
+          placeholder="Altura (em m)"
+          onChange={()=>handleChange('altura')}
         />
 
         <select required name="select" id="select" placeholder="Objetivo">
