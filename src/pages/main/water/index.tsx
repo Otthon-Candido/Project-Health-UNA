@@ -60,7 +60,7 @@ export default function Water(props: Props) {
         <div className={styles.boxImc}>
             <div className={styles.conteudoImc}>
               <p className={styles.titulo}>Seu consumo ideal é de: {litros} litros de água por dia</p>
-              <div className={styles.teste}>
+              <div className={styles.dflex}>
                 <p className={styles.textWater}>{copos} copos de 300 ml por dia</p>
                 <img className={styles.bottleImg} src={WaterGlass} alt="" />
                 <hr />

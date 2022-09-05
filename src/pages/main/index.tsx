@@ -16,9 +16,14 @@ export default function Main() {
   return (
     <div className={styles.container}>
       <div>
+      <div  className={styles.water}>
       <Water peso={peso} cond={cond} />
+      </div>
+      <div className={styles.sleep}>
       <Sleep idade={idade} cond={cond} />
       </div>
+      </div>
+      <div className={styles.form}>
       <Form
         setSexo={setSexo}
         setIdade={setIdade}
@@ -27,7 +32,10 @@ export default function Main() {
         setObjetivo={setObjetivo}
         setCond={setCond}
       />
+      </div>
+      <div className={styles.imc}>
       <Imc peso={peso} altura={altura} cond={cond} />
+      </div>
     </div>
   );
 }

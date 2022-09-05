@@ -3,6 +3,7 @@ import styles from "./Imc.module.scss";
 import magroImg from "../../../assets/magro.svg";
 import normalImg from "../../../assets/normal.svg";
 import obesoImg from "../../../assets/obeso-colorido.svg";
+import classNames from "classnames";
 
 interface Props {
   altura: number | null;
@@ -30,32 +31,32 @@ export default function Imc(props: Props) {
       setObeso(false);
 
       if (imc < 18.5) {
-        setImcSituation("Você está abaixo do Peso Ideal");
+        setImcSituation("ABAIXO");
         setMagro(true);
       }
 
       if (imc >= 18.5 && imc <= 24.9) {
-        setImcSituation("Você está no peso ideal");
+        setImcSituation("SAUDAVEL");
         setNormal(true);
       }
 
       if (imc > 24.9 && imc <= 29.9) {
-        setImcSituation("Você está com sobrepeso");
+        setImcSituation("SOBREPESO");
         setObeso(true);
       }
 
       if (imc > 29.9 && imc <= 34.9) {
-        setImcSituation("Você está com obesidade nivel 1");
+        setImcSituation("OBESIDADE 1");
         setObeso(true);
       }
 
       if (imc > 34.9 && imc <= 39.9) {
-        setImcSituation("Você está com obesidade nivel 2");
+        setImcSituation("OBESIDADE 2");
         setObeso(true);
       }
 
       if (imc > 40) {
-        setImcSituation("Você está com obesidade nivel 3");
+        setImcSituation("OBESIDADE 3");
         setObeso(true);
       }
     }
@@ -64,19 +65,22 @@ export default function Imc(props: Props) {
   return (
     <div>
       {cond ? (
-        <div>
+        <div className={classNames({
+          [styles.boxImc]: true,
+          [styles.grid]: true,
+        })}>
           <p>Seu IMC é de: {calcImc}</p>
           <div className={styles.flex}>
-            <div>
-              <p>{magro ? <div>{imcSituation}</div> : null}</p>
+            <div className={styles.grid}>
+              <p>{magro ? <span>{imcSituation}</span> : null}</p>
               <img src={magroImg} alt="" />
             </div>
-            <div>
-              <p>{normal ? <div>{imcSituation}</div> : null}</p>
+            <div className={styles.grid}>
+              <p>{normal ? <span>{imcSituation}</span> : null}</p>
               <img src={normalImg} alt="" />
             </div>
-            <div>
-              <p>{obeso ? <div>{imcSituation}</div> : null}</p>
+            <div className={styles.grid}>
+              <p>{obeso ? <span>{imcSituation}</span> : null}</p>
               <img src={obesoImg} alt="" />
             </div>
           </div>

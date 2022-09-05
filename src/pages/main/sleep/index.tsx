@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Sleep.module.scss";
 import sleepImg from "../../../assets/sleep.svg";
+import classNames from "classnames";
 
 interface Props {
   idade: number | null;
@@ -61,10 +62,14 @@ export default function Sleep(props: Props) {
   return (
     <div>
       {cond ? (
-        <div>
+        <div className={styles.boxImc}>
           <h2>Quantidade de sono ideal</h2>
+          <div className={classNames({
+            [styles.grid]: true,
+          })}>
           <img src={sleepImg} alt="" />
           <p>{sleep}</p>
+          </div>
         </div>
       ) : null}
     </div>
