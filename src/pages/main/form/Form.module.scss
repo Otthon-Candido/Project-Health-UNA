@@ -49,10 +49,6 @@ input:focus{
     outline: none;
 }
 
-input[type=number]::-webkit-inner-spin-button { 
-    -webkit-appearance: none;
-}
-
 .boxForm{
     display: flex;
     flex-direction: column;
