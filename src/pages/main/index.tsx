@@ -4,6 +4,7 @@ import Imc from "./imc";
 import styles from "./Main.module.scss";
 import Sleep from "./sleep";
 import Water from "./water";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Main() {
   const [sexo, setSexo] = useState<string>("");
