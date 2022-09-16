@@ -1,6 +1,6 @@
 import styles from "./Basal.module.scss";
 import calorias from "../../../assets/calorias.png";
-import { useEffect} from "react";
+import { useEffect, useState} from "react";
 
 interface Props {
     idade: number | null;
@@ -40,10 +40,12 @@ export default function Basal(props: Props){
             switch (sexo){
                 case 'Masculino':
                     calcBasal = _exercicio*(655 + ((9.6 * peso) + (1.8 * (altura*100)) - (4.7 * idade)))
+                    calcBasal = parseFloat(calcBasal.toFixed(2))
                     setTaxaBasal(calcBasal)
                 break
                 case 'Feminino':
                     calcBasal = _exercicio*(66 + ((13.7 * peso) + (5 * (altura*100)) - (6.8 * idade)))
+                    calcBasal = parseFloat(calcBasal.toFixed(2))
                     setTaxaBasal(calcBasal)
                 break
             }}
@@ -60,8 +62,3 @@ export default function Basal(props: Props){
   )
 
 }
-
-function useState<T>(arg0: null): [any, any] {
-    throw new Error("Function not implemented.");
-}
-
