@@ -5,6 +5,7 @@ import styles from "./Main.module.scss";
 import Sleep from "./sleep";
 import Water from "./water";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Basal from "./basal";
 
 export default function Main() {
   const [sexo, setSexo] = useState<string>("");
@@ -13,6 +14,7 @@ export default function Main() {
   const [altura, setAltura] = useState<number | null>(null);
   const [objetivo, setObjetivo] = useState<string>("");
   const [cond, setCond] = useState<boolean>(false);
+  const [exercicio, setExercicio] = useState<string>("");
 
   return (
     <div className={styles.container}>
@@ -23,6 +25,9 @@ export default function Main() {
       <div className={styles.sleep}>
       <Sleep idade={idade} cond={cond} />
       </div>
+      <div className={styles.basal}>
+      <Basal idade={idade} peso={peso} altura={altura} sexo={sexo} exercicio={exercicio} cond={cond} />
+      </div>
       </div>
       <div className={styles.form}>
       <Form
@@ -32,6 +37,7 @@ export default function Main() {
         setAltura={setAltura}
         setObjetivo={setObjetivo}
         setCond={setCond}
+        setExercicio={setExercicio}
       />
       </div>
       <div className={styles.imc}>
