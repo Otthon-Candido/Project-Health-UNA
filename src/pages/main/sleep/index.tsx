@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import styles from "./Sleep.module.scss";
 import sleepImg from "../../../assets/sono.png";
 import classNames from "classnames";
+import Example from "../modal";
 
 interface Props {
   idade: number | null;
   cond: boolean;
+  mode:string
 }
 
 export default function Sleep(props: Props) {
-  const { idade, cond } = props;
+  const { idade, cond, mode } = props;
   const [sleep, setSleep] = useState<string | null>(null);
 
   useEffect(() => {
@@ -60,16 +62,22 @@ export default function Sleep(props: Props) {
   }, [idade]);
 
   return (
-    <div>
+    <div className={`${mode === 'dark'? styles["dark"]:styles["light"]} ${["w-100 d-flex justify-content-end"]}`}>
       {cond ? (
         <div className={styles.boxImc}>
-          <h2>Quantidade de sono ideal</h2>
+        <div style={{height: "10px"}}  className={`${["w-100 d-flex justify-content-end p-2"]}`}> 
+          <Example   mode={mode} type={"sleep"}/> 
+          </div>
+        <div className="d-grid  justify-content-center align-items-center">
+      
+          <h2 className={styles.titulo}>Quantidade de sono ideal</h2>
           <div className={classNames({
             [styles.grid]: true,
           })}>
           <img src={sleepImg} alt="" />
           <p>{sleep}</p>
           </div>
+        </div>
         </div>
       ) : null}
     </div>

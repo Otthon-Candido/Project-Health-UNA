@@ -1,0 +1,14 @@
+.button{
+    cursor: pointer;
+    margin-left:10px
+}
+p{
+    margin-bottom: 0.1rem!important;
+}
+
+.dark{
+    .button{
+        background-color: #2F2F2F!important;
+    }
+   
+}

@@ -5,6 +5,8 @@
     min-height: 100vh;
     background: #8DFEEE;
 }
+
+
 .form{
     margin: 50px 20px;
 
@@ -17,4 +19,14 @@
 }
 .sleep{
     margin-top: 20px;
+}
+
+.basal{
+    margin-top: 20px;
+}
+
+.dark{
+    .container{
+        background-color: #121212;
+    } 
 }

@@ -12,10 +12,10 @@
 
 .boxImc{
     width: 387px;
-    height: 180px;
+    height: auto;
     background-color: #3AE3CB;
     color: white;
-
+    padding-bottom: 10px;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
 }
@@ -24,7 +24,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 34px;
 }
 
 .dflex{
@@ -44,4 +43,10 @@
 hr{
     border: 1px solid white;
     background-color: white;
+}
+
+.dark{
+    .boxImc{
+        background-color: #2F2F2F;
+        }
 }

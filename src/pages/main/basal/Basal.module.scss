@@ -1,20 +1,20 @@
-.flex{
+.dflex{
     display: flex;
-    justify-items: center;
-    align-items: end;
 }
 
-.grid{
-    justify-items: center;
-    display: grid;
+.titulo{
+    font-size: 1.1rem;
+    flex-wrap: nowrap;
 }
 
 .boxImc{
-    align-items: center;
     width: 387px;
-    height: 165px;
+    height: 180px;
     background-color: #3AE3CB;
     color: white;
+    display: grid;
+    align-items: center;
+    justify-items: center;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
 }

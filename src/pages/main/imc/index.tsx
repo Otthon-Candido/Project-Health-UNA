@@ -7,21 +7,24 @@ import magroColorImg from "../../../assets/magro-colorido.png";
 import normalColorImg from "../../../assets/normal-colorido.png";
 import obesoColorImg from "../../../assets/obeso-colorido.png";
 import classNames from "classnames";
+import Example from "../modal";
 
 interface Props {
   altura: number | null;
   peso: number | null;
   cond: boolean;
+  mode:string
 }
 
 export default function Imc(props: Props) {
-  const { altura, peso, cond } = props;
+  const { altura, peso, cond, mode } = props;
 
   var [calcImc, setcalcImc] = useState<number | null>(null);
   var [imcSituation, setImcSituation] = useState<string | null>(null);
   var [magro, setMagro] = useState<boolean | null>(null);
   var [obeso, setObeso] = useState<boolean | null>(null);
   var [normal, setNormal] = useState<boolean | null>(null);
+  var [teste, setTeste] = useState<number | null>(2);
   
   useEffect(() => {
     if (peso != null && altura != null) {
@@ -66,12 +69,21 @@ export default function Imc(props: Props) {
   }, [altura, peso]);
 
   return (
-    <div>
+    <div className={`${mode === 'dark'? styles["dark"]:styles["light"]}`}>
       {cond ? (
+
+
+        
         <div className={classNames({
           [styles.boxImc]: true,
           [styles.grid]: true,
         })}>
+  
+          <div style={{height: "10px"}} className="w-100 d-flex justify-content-end mr-">   
+          <Example   mode={mode} type={"imc"}/> 
+          </div>
+
+           
           <p>Seu IMC é de: {calcImc}</p>
           <div className={styles.flex}>
             <div className={styles.grid}>

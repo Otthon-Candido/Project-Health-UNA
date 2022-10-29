@@ -1,16 +1,24 @@
-.boxImc {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  width: 387px;
-  height: 180px;
+.boxImc{
+  height: 160px;
   background-color: #3ae3cb;
+  width: 387px;
   color: white;
   box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
 }
 
+
 .grid {
   display: grid;
   justify-items: center;
+}
+
+.titulo{
+  font-size: 1.3rem;
+}
+
+.dark{
+  .boxImc{
+    background-color: #2F2F2F;
+  }
 }
