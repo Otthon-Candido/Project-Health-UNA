@@ -55,10 +55,8 @@ input:focus{
     background-color: #3AE3CB;
     align-items: center;
     gap: 22px;
-
     width: 361px;
     height: 491px;
-
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
 }
@@ -95,5 +93,35 @@ input:focus{
     color: #FFEDE6;
 
     padding-top: 10px;
+}
+
+.dark{
+
+    .tituloFormulario{
+        color: white;
+    }
+
+    select{
+        color: black;
+    }
+
+    input::placeholder{
+        color: black;
+    }
+
+    .boxForm{
+        background-color: #2F2F2F;
+        box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .botao{
+
+        background-color: #121212;
+        border: 1px solid #121212;
+        color: #FFEDE6;
+        border: 1px solid #121212;
+    
+    }
+ 
 }
 

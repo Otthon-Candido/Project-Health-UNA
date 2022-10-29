@@ -1,7 +1,6 @@
 import styles from "./Basal.module.scss";
-import calorias from "../../../assets/calorias.png";
+import calorias from "../../assets/calorias.png";
 import { useEffect, useState} from "react";
-import Example from "../modal";
 
 interface Props {
     idade: number | null;
@@ -10,11 +9,10 @@ interface Props {
     sexo: string | null;
     exercicio: string | null;
     cond: boolean;
-    mode:string
   }
 
 export default function Basal(props: Props){
-    const {idade, peso, altura, sexo, exercicio, cond, mode } = props;
+    const {idade, peso, altura, sexo, exercicio, cond } = props;
 
     const [taxaBasal, setTaxaBasal] = useState<any>(null);
    
@@ -55,19 +53,15 @@ export default function Basal(props: Props){
     },[idade, peso, altura, sexo, exercicio])
 
   return (
-    <div className={`${mode === 'dark'? styles["dark"]:styles["light"]}`}>
-          {cond ? (
-        <div className={styles.boxImc}>
-        <div className={`${["w-100 d-flex justify-content-end "]}`}> 
-          <Example   mode={mode} type={"basal"}/> 
-          </div>
-          
-        <h2 className={styles.titulo}>Seu Gasto Calórico Basal é de: {taxaBasal}</h2>
+    <div>
+        {cond ? (
+        <div>
+        <h1>Seu Gasto Calórico Basal é de: {taxaBasal}</h1>
         <div className={styles.dflex}>
         <img src={calorias} alt="" />
         </div>
         </div>
-             ) : null}
+          ) : null}
     </div>
   )
 

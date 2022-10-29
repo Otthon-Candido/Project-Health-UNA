@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import styles from "./Water.module.scss";
 import Bottle from "../../../assets/garrafa-de-agua.png";
 import WaterGlass from "../../../assets/copo-de-agua.png";
+import Example from "../modal";
 
 interface Props {
   peso: number | null;
-  cond: boolean
+  cond: boolean;
+  mode:string;
 }
 
 export default function Water(props: Props) {
@@ -13,7 +15,7 @@ export default function Water(props: Props) {
   const [copos, setCopos] = useState<string | null>(null);
   const [garrafas, setGarrafas] = useState<string | null>(null);
 
-  const { peso, cond } = props;
+  const { peso, cond,mode } = props;
 
   useEffect(() => {
     if (peso != null) {
@@ -55,9 +57,14 @@ export default function Water(props: Props) {
   }, [peso]);
 
   return (
-    <div>
+    <div className={`${mode === 'dark'? styles["dark"]:styles["light"]}`}>
       {cond ? (
         <div className={styles.boxImc}>
+          
+          <div style={{height: "10px"}} className="w-100 d-flex justify-content-end">   
+          <Example   mode={mode} type={"water"}/> 
+          </div>
+          
             <div className={styles.conteudoImc}>
               <p className={styles.titulo}>Seu consumo ideal é de: {litros} litros de água por dia</p>
               <div className={styles.dflex}>

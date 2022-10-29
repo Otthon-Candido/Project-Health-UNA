@@ -9,6 +9,7 @@ interface Props {
   setObjetivo: React.Dispatch<React.SetStateAction<string>>;
   setCond: React.Dispatch<React.SetStateAction<boolean>>;
   setExercicio: React.Dispatch<React.SetStateAction<string>>;
+  mode:string
 }
 
 export default function Form({
@@ -18,7 +19,8 @@ export default function Form({
   setAltura,
   setObjetivo,
   setCond,
-  setExercicio
+  setExercicio,
+  mode
 }: Props) {
   function handleSubmit(event: any) {
     event.preventDefault();
@@ -63,7 +65,8 @@ export default function Form({
   }
 
   return (
-    <div className={styles.boxForm}>
+    <div className={`${mode === 'dark'? styles["dark"]:styles["light"]}`}>
+    <div  className={styles.boxForm}>
       <h1 className={styles.tituloFormulario}>Informe seus dados</h1>
       <form className={styles.form} onSubmit={(evento) => handleSubmit(evento)}>
         <select required name="sexo" id="sexo" placeholder="Sexo">
@@ -118,6 +121,7 @@ export default function Form({
 
         <input className={styles.botao} type="submit" value="Enviar" />
       </form>
+    </div>
     </div>
   );
 }
