@@ -102,26 +102,58 @@ input:focus{
     }
 
     select{
-        color: black;
+        color: #032554;
     }
 
     input::placeholder{
-        color: black;
+        color: #032554;
     }
 
     .boxForm{
-        background-color: #2F2F2F;
-        box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+        background-color: #0c3061;
+        box-shadow: 3px 4px 4px #032554;
     }
 
     .botao{
 
-        background-color: #121212;
-        border: 1px solid #121212;
+        background-color: #0a3c83;
+        border: 1px solid #002F72;
         color: #FFEDE6;
-        border: 1px solid #121212;
+        border: 1px solid #002F72;
     
     }
  
 }
+
+.light{
+
+    .tituloFormulario{
+        color: white;
+    }
+
+    select{
+        color: #0365AB;
+    }
+
+    input::placeholder{
+        color: #0365AB;
+    }
+
+    .boxForm{
+        background-color: #0365AB;
+        box-shadow: 3px 4px 4px #0365AB;
+    }
+
+    .botao{
+
+        background-color: #002F72;
+        border: 1px solid #002F72;
+        color: #FFEDE6;
+        border: 1px solid #002F72;
+    
+    }
+ 
+}
+
+
 

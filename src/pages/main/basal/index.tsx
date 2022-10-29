@@ -58,13 +58,13 @@ export default function Basal(props: Props){
     <div className={`${mode === 'dark'? styles["dark"]:styles["light"]}`}>
           {cond ? (
         <div className={styles.boxImc}>
-        <div className={`${["w-100 d-flex justify-content-end "]}`}> 
+        <div className={`${["w-100 d-flex justify-content-end p-2"]}`}> 
           <Example   mode={mode} type={"basal"}/> 
           </div>
           
         <h2 className={styles.titulo}>Seu Gasto Calórico Basal é de: {taxaBasal}</h2>
         <div className={styles.dflex}>
-        <img src={calorias} alt="" />
+        <img className={styles.img} src={calorias} alt="" />
         </div>
         </div>
              ) : null}

@@ -79,13 +79,13 @@ export default function Imc(props: Props) {
           [styles.grid]: true,
         })}>
   
-          <div style={{height: "10px"}} className="w-100 d-flex justify-content-end mr-">   
+          <div className="w-100 d-flex justify-content-end p-2">   
           <Example   mode={mode} type={"imc"}/> 
           </div>
 
            
           <p>Seu IMC é de: {calcImc}</p>
-          <div className={styles.flex}>
+          <div  className={`${["d-flex align-items-end pb-2"]}`}>
             <div className={styles.grid}>
               <p>{magro ? <span>{imcSituation}</span> : null}</p>
               <div>

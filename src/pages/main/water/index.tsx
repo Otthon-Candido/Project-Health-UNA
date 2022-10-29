@@ -61,7 +61,7 @@ export default function Water(props: Props) {
       {cond ? (
         <div className={styles.boxImc}>
           
-          <div style={{height: "10px"}} className="w-100 d-flex justify-content-end">   
+          <div className="w-100 d-flex justify-content-end p-2">   
           <Example   mode={mode} type={"water"}/> 
           </div>
           

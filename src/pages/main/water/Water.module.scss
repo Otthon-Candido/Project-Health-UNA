@@ -7,7 +7,7 @@
 
 .titulo{
     width: 180px;
-    padding-top: 16px;
+    padding-bottom: 12px;
 }
 
 .boxImc{
@@ -47,6 +47,13 @@ hr{
 
 .dark{
     .boxImc{
-        background-color: #2F2F2F;
+        background-color: #054095;
         }
 }
+
+.light{
+    .boxImc{
+        background-color: #0365AB!important;
+        }
+}
+

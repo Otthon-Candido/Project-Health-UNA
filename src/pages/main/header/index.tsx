@@ -44,7 +44,6 @@ function BrandExample({setMode,mode}:Props) {
               className="d-inline-block align-top"
             />
               </button>
-              Health
                  </div>
      
           </Navbar.Brand>

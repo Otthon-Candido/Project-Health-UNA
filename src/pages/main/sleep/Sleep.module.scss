@@ -1,5 +1,5 @@
 .boxImc{
-  height: 160px;
+  height: 180px;
   background-color: #3ae3cb;
   width: 387px;
   color: white;
@@ -19,6 +19,13 @@
 
 .dark{
   .boxImc{
-    background-color: #2F2F2F;
+    background-color: #054095;
   }
 }
+
+.light{
+  .boxImc{
+    background-color: #0365AB!important;
+  }
+}
+

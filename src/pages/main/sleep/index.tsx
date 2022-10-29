@@ -65,7 +65,7 @@ export default function Sleep(props: Props) {
     <div className={`${mode === 'dark'? styles["dark"]:styles["light"]} ${["w-100 d-flex justify-content-end"]}`}>
       {cond ? (
         <div className={styles.boxImc}>
-        <div style={{height: "10px"}}  className={`${["w-100 d-flex justify-content-end p-2"]}`}> 
+        <div  className={`${["w-100 d-flex justify-content-end p-2"]}`}> 
           <Example   mode={mode} type={"sleep"}/> 
           </div>
         <div className="d-grid  justify-content-center align-items-center">
