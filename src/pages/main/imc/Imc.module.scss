@@ -1,0 +1,53 @@
+.flex{
+    display: flex;
+    justify-items: center;
+    align-items: end;
+}
+
+.modal{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+.grid{
+    justify-items: center;
+    display: grid;
+}
+
+.titulo{
+    font-size: 1.1rem;
+    flex-wrap: nowrap;
+    margin-top: 25px;
+}
+
+.boxImc{
+    width: 387px;
+    height: 180px;
+    background-color: #3AE3CB;
+    color: white;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.dark{
+    .boxImc{
+        background-color: #054095!important;
+    }
+   
+}
+
+.light{
+    .boxImc{
+        background-color: #0365AB!important;
+    }
+   
+}
+
+@media screen and (max-width: 1314px) {
+    .boxImc{
+        margin-bottom: 20px;
+    }
+  }

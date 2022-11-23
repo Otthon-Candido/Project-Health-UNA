@@ -1,0 +1,31 @@
+.iconeMoon, .iconeSun{
+    width: 43px;
+    height: 43px;
+    border-radius: 20px;
+    border:none;
+}
+
+.dark{
+    .iconeMoon{
+        background-color:rgb(4, 4, 255);
+    }
+    .iconeSun{
+        background-color: #054095 !important;
+    }
+    .navbar{
+        background-color: #002F72;
+    }
+}
+
+.light{
+    .iconeMoon{
+        background-color: #0365AB !important;
+    }
+    .iconeSun{
+        background-color:rgb(4, 4, 255);
+    }
+    .navbar{
+        background-color: #0379A1;
+    }
+    
+}

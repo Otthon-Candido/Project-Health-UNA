@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import styles from "./Water.module.scss";
-import Bottle from "../../../assets/bottle.svg";
-import WaterGlass from "../../../assets/waterGlass.svg";
+import Bottle from "../../../assets/garrafa-de-agua.png";
+import WaterGlass from "../../../assets/copo-de-agua.png";
+import ModalComponent from "../modal";
 
 interface Props {
   peso: number | null;
-  cond: boolean
+  cond: boolean;
+  mode:string;
 }
 
 export default function Water(props: Props) {
@@ -13,7 +15,7 @@ export default function Water(props: Props) {
   const [copos, setCopos] = useState<string | null>(null);
   const [garrafas, setGarrafas] = useState<string | null>(null);
 
-  const { peso, cond } = props;
+  const { peso, cond,mode } = props;
 
   useEffect(() => {
     if (peso != null) {
@@ -55,15 +57,28 @@ export default function Water(props: Props) {
   }, [peso]);
 
   return (
-    <div>
+    <div className={`${mode === 'dark'? styles["dark"]:styles["light"]}`}>
       {cond ? (
-        <div>
-          <p>Seu consumo ideal é de {litros} litros de água por dia</p>
-          <img src={WaterGlass} alt="" />
-          <p>{copos} copos de 300 ml por dia</p>
-          <img src={Bottle} alt="" />
-          <p>{garrafas} garrafas de 500 ml por dia</p>
-        </div> 
+        <div className={styles.boxImc}>
+          
+          <div className={styles.modal}>   
+          <ModalComponent   mode={mode} type={"water"}/> 
+          </div>
+          
+            <div className={styles.conteudoImc}>
+              <div className={styles.divTitulo}>
+              <h3 className={styles.titulo}>Seu consumo ideal é de:</h3>
+              <h3 className={styles.titulo}> {litros} litros de água por dia</h3>
+              </div>
+              <div className={styles.dflex}>
+                <p className={styles.textWater}>{copos} copos de 300 ml por dia</p>
+                <img className={styles.bottleImg} src={WaterGlass} alt="" />
+                <hr />
+                <img src={Bottle} alt="" />
+                <p className={styles.textWater}>{garrafas} garrafas de 500 ml por dia</p>
+              </div> 
+            </div> 
+        </div>
       ) : null}
     </div>
   );

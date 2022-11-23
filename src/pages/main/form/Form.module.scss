@@ -1,3 +1,9 @@
+.titulo{
+    font-size: 20px;
+    text-align: start;
+    color: white;
+}
+
 .form{
     display: grid;
 }
@@ -8,4 +14,162 @@ input{
 
 select{
     width: 200px;
+}
+
+.alert{
+    color: white;
+    font-weight: bold;
+}
+.divAlert{
+    margin-top: 6px;
+    background-color: red;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+}
+//-------------------------------------------------------------------------------------------------------------------
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+input, select {
+    width: 200px;
+    height: 40px;
+    padding: 0;
+
+    border: 1px solid #CDECE7;
+    border-radius: 5px;
+}
+
+select{
+    padding-left: 14px;
+}
+
+select:focus{
+    outline: none;
+}
+
+input::placeholder{
+    border: none;
+}
+
+input[type='text'], [type='number']{
+    padding-left: 18px;
+}
+
+input:focus{
+    outline: none;
+}
+.inputs{
+    margin-top: 5px;
+}
+
+.boxForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 361px;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.button{
+    width: 262px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFEDE6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.tituloFormulario{
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFEDE6;
+
+    padding-top: 10px;
+}
+
+.dark{
+
+    .tituloFormulario{
+        color: white;
+    }
+
+    select{
+        color:  #054095!important;;
+    }
+
+    input::placeholder{
+        color:  #054095!important;;
+    }
+
+    .boxForm{
+        background-color:  #054095!important;;
+        box-shadow: 3px 4px 4px  #054095!important;;
+    }
+
+    .button{
+
+        background-color: #002F72;
+        border: 1px solid #002F72;
+        color: #FFEDE6;
+        border: 1px solid #002F72;
+    
+    }
+ 
+}
+
+.light{
+
+    .tituloFormulario{
+        color: white;
+    }
+
+    select{
+        color: #0365AB;
+    }
+
+    input::placeholder{
+        color: #0365AB;
+    }
+
+    .boxForm{
+        background-color: #0365AB;
+        box-shadow: 3px 4px 4px #0365AB;
+    }
+
+    .button{
+
+        background-color: #002F72;
+        border: 1px solid #002F72;
+        color: #FFEDE6;
+        border: 1px solid #002F72;
+    
+    }
+ 
+}
+
+
+@media screen and (max-width: 1314px) {
+    .boxForm{
+       margin-bottom: 40px;
+  }
 }

@@ -1,29 +1,32 @@
 import { useEffect, useState } from "react";
 import styles from "./Sleep.module.scss";
-import sleepImg from "../../../assets/sleep.svg";
+import sleepImg from "../../../assets/sono.png";
+import classNames from "classnames";
+import ModalComponent from "../modal";
 
 interface Props {
   idade: number | null;
   cond: boolean;
+  mode:string
 }
 
 export default function Sleep(props: Props) {
-  const { idade, cond } = props;
+  const { idade, cond, mode } = props;
   const [sleep, setSleep] = useState<string | null>(null);
 
   useEffect(() => {
     var typeIdade;
     if (idade != null) {
-      if (idade < 5) {
+      if (idade <= 5) {
         typeIdade = "crianca";
       }
-      if (idade < 13 && idade > 5) {
+      if (idade <= 13 && idade > 5) {
         typeIdade = "pre-adolescente";
       }
-      if (idade < 17 && idade > 14) {
+      if (idade <= 17 && idade > 14) {
         typeIdade = "adolescente";
       }
-      if (idade < 64 && idade > 18) {
+      if (idade <= 64 && idade >= 18) {
         typeIdade = "adulto";
       }
       if (idade > 64) {
@@ -59,12 +62,22 @@ export default function Sleep(props: Props) {
   }, [idade]);
 
   return (
-    <div>
+    <div className={`${mode === 'dark'? styles["dark"]:styles["light"]} ${["w-100 d-flex justify-content-end"]}`}>
       {cond ? (
-        <div>
-          <h2>Quantidade de sono ideal</h2>
+        <div className={styles.boxImc}>
+        <div  className={styles.modal}> 
+          <ModalComponent   mode={mode} type={"sleep"}/> 
+          </div>
+        <div className="d-grid  justify-content-center align-items-center">
+      
+          <h2 className={styles.titulo}>Quantidade de sono ideal</h2>
+          <div className={classNames({
+            [styles.grid]: true,
+          })}>
           <img src={sleepImg} alt="" />
           <p>{sleep}</p>
+          </div>
+        </div>
         </div>
       ) : null}
     </div>

@@ -1,0 +1,12 @@
+.modal-content{
+    background: #054095!important;
+
+}
+
+.modal-footer{
+    border-top: none!important;
+}
+
+.modal-body{
+    color: white;
+}

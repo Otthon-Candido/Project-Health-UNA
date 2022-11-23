@@ -1,0 +1,30 @@
+.button{
+    cursor: pointer;
+    margin-left:10px
+}
+p{
+    margin-bottom: 0.1rem!important;
+}
+
+.dark{
+    .button{
+        background-color: #054095!important;
+    }
+
+} 
+
+.light{
+    .button{
+        background-color: #0365AB!important;
+    }
+
+   
+}
+
+.exit{
+    background-color: #002F72!important;
+    border: none!important;
+}
+.attention{
+    font-size: 18px;
+}
