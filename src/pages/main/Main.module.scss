@@ -8,7 +8,7 @@
 
 
 .form{
-    margin: 50px 20px;
+    margin: 20px 20px;
 
 }
 .water{
@@ -37,4 +37,47 @@
     } 
 }
 
+.sidebar{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
 
+.size{
+    width: 400px;
+}
+
+.carousel{
+   display: none;
+}
+.carousel-indicators {
+    margin-bottom: 0px!important;
+}
+
+@media screen and (max-width: 1314px) {
+    .carousel{
+        display: grid;
+        margin-bottom: 50px;
+     }
+
+     .bigSize{
+        display: none;
+     }
+
+     .container{
+        display: grid;
+
+    }
+  }
+
+  @media screen and (min-width: 1314px) {
+    .carousel{
+        display: none;
+     }
+
+     .bigSize{
+        display: block;
+     }
+
+    
+  }

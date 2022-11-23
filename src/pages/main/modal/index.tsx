@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Button,
   Modal,
@@ -11,27 +11,36 @@ import PropTypes from 'prop-types';
 import magro from "../../../assets/magro.png";
 import normal from "../../../assets/normal.png";
 import info from "../../../assets/informacao.png";
+import attenction from "../../../assets/atencao.png";
 import obeso from "../../../assets/obeso.png";
 import styles from "./Modal.module.scss";
 import './modal.css';
 
 interface Props {
- type:string,
+ type?:string;
  mode:string
 }
 
-function Example(props:Props) {
+function ModalComponent(props:Props) {
   const { type,mode } = props;
   const [modal, setModal] = useState(false);
   const [backdrop, setBackdrop] = useState(true);
   const [keyboard, setKeyboard] = useState(true);
 
   const toggle = () => setModal(!modal);
-
+  useEffect(()=>{
+    if(type=='initial'){
+      setModal(true)
+    }
+  },[])
+ 
   return (
     <div className={`${mode === 'dark'? styles["dark"]:styles["light"]}`}>
+      
       <Form inline onSubmit={(e) => e.preventDefault()}>
-        <img className={styles.button} onClick={toggle} src={info} alt="" /> 
+        {type!="initial" &&(
+        <img  className={styles.button} onClick={toggle} src={info} alt="" /> 
+        )}
      
       </Form>
       <Modal
@@ -41,6 +50,14 @@ function Example(props:Props) {
         keyboard={keyboard}
       >
         <ModalBody>
+
+        {type=="initial" && 
+        <div className='d-flex align-items-center
+        '>
+        <img src={attenction} alt="" />
+          <p className={styles.attention}>Atenção, nenhuma informação desse site substitui o atendimento de um profissional. </p>
+          </div>}
+
         {type=="imc" && <div>
         O IMC é um cálculo simples que permite avaliar se a pessoa está dentro do peso que é considerado ideal para a sua altura. Também conhecido como Índice de Massa Corporal, o IMC é uma fórmula utilizada por vários profissionais de saúde, incluindo médicos, enfermeiros e nutricionistas, para saber, de uma forma rápida, se a pessoa precisa ganhar ou perder peso.
         Embora seja uma ferramenta muito comum, o IMC não é considerada a forma mais exata de avaliar o peso, já que não leva em consideração a composição corporal.
@@ -74,10 +91,10 @@ function Example(props:Props) {
         {type=="sleep" && <div>
         Qualidade de sono ideal
         Especialistas recomendam em média 8 horas de sono por dia, sem interrupções. Este número pode variar de acordo com a idade de cada indivíduo e as necessidades de desenvolvimento de seu corpo, de acordo com o indicado.
-        Adultos necessitam de 7 a 8 horas de sono de qualidade e em horários regulares por dia;
-        Adolescentes precisam dormir cerca de 8 a 10 horas diariamente; 
-        Crianças necessitam de 9 a 13 horas de sono a cada dia;
-        Bebês precisam dormir de 12 a 16 horas por dia.
+        Adultos necessitam de 7 a 8 horas de sono de qualidade e em horários regulares por dia;
+        Adolescentes precisam dormir cerca de 8 a 10 horas diariamente; 
+        Crianças necessitam de 9 a 13 horas de sono a cada dia;
+        Bebês precisam dormir de 12 a 16 horas por dia.
         </div>}
 
         {type=="basal" && <div>
@@ -94,9 +111,20 @@ function Example(props:Props) {
         </div>}
         </ModalBody>
         <ModalFooter>
+
+          <div>
+            { type!="initial" && type!="" &&  (
           <Button color="secondary" onClick={toggle}>
-            Cancel
+            Fechar
           </Button>
+        )}
+
+        { type=="initial" && (
+          <Button className={styles.exit} onClick={()=> setModal(false)}>
+            Confirmar
+          </Button>
+        )}
+          </div>
         </ModalFooter>
     
       </Modal>
@@ -104,8 +132,8 @@ function Example(props:Props) {
   );
 }
 
-Example.propTypes = {
+ModalComponent.propTypes = {
   className: PropTypes.string,
 };
 
-export default Example;
+export default ModalComponent;

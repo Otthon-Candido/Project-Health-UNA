@@ -1,3 +1,9 @@
+.titulo{
+    font-size: 20px;
+    text-align: start;
+    color: white;
+}
+
 .form{
     display: grid;
 }
@@ -8,6 +14,20 @@ input{
 
 select{
     width: 200px;
+}
+
+.alert{
+    color: white;
+    font-weight: bold;
+}
+.divAlert{
+    margin-top: 6px;
+    background-color: red;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
 }
 //-------------------------------------------------------------------------------------------------------------------
 *{
@@ -28,7 +48,6 @@ input, select {
 
 select{
     padding-left: 14px;
-    color: #0EB39D;
 }
 
 select:focus{
@@ -36,29 +55,28 @@ select:focus{
 }
 
 input::placeholder{
-    color: #0EB39D;
     border: none;
 }
 
 input[type='text'], [type='number']{
-    color: #0EB39D;
     padding-left: 18px;
 }
 
 input:focus{
     outline: none;
 }
+.inputs{
+    margin-top: 5px;
+}
 
 .boxForm{
     display: flex;
     flex-direction: column;
-    background-color: #3AE3CB;
     align-items: center;
-    gap: 22px;
     width: 361px;
-    height: 491px;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .form{
@@ -71,20 +89,14 @@ input:focus{
     height: 100%;
 }
 
-.botao{
+.button{
     width: 262px;
-    background-color: #0EB39D;
-    border: 1px solid #2DC1AE;
     font-weight: 700;
     font-size: 20px;
     color: #FFEDE6;
-
-    border: 1px solid #2DC1AE;
     border-radius: 5px;
-}
-
-.botao:hover{
-    border: 3px solid #2DC1AE;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .tituloFormulario{
@@ -102,21 +114,21 @@ input:focus{
     }
 
     select{
-        color: #032554;
+        color:  #054095!important;;
     }
 
     input::placeholder{
-        color: #032554;
+        color:  #054095!important;;
     }
 
     .boxForm{
-        background-color: #0c3061;
-        box-shadow: 3px 4px 4px #032554;
+        background-color:  #054095!important;;
+        box-shadow: 3px 4px 4px  #054095!important;;
     }
 
-    .botao{
+    .button{
 
-        background-color: #0a3c83;
+        background-color: #002F72;
         border: 1px solid #002F72;
         color: #FFEDE6;
         border: 1px solid #002F72;
@@ -144,7 +156,7 @@ input:focus{
         box-shadow: 3px 4px 4px #0365AB;
     }
 
-    .botao{
+    .button{
 
         background-color: #002F72;
         border: 1px solid #002F72;
@@ -156,4 +168,8 @@ input:focus{
 }
 
 
-
+@media screen and (max-width: 1314px) {
+    .boxForm{
+       margin-bottom: 40px;
+  }
+}

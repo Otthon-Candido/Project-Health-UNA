@@ -7,7 +7,7 @@ import magroColorImg from "../../../assets/magro-colorido.png";
 import normalColorImg from "../../../assets/normal-colorido.png";
 import obesoColorImg from "../../../assets/obeso-colorido.png";
 import classNames from "classnames";
-import Example from "../modal";
+import ModalComponent from "../modal";
 
 interface Props {
   altura: number | null;
@@ -79,12 +79,12 @@ export default function Imc(props: Props) {
           [styles.grid]: true,
         })}>
   
-          <div className="w-100 d-flex justify-content-end p-2">   
-          <Example   mode={mode} type={"imc"}/> 
+          <div className={styles.modal}>   
+          <ModalComponent   mode={mode} type={"imc"}/> 
           </div>
 
            
-          <p>Seu IMC é de: {calcImc}</p>
+          <h3 className={styles.titulo}>Seu IMC é de: {calcImc}</h3>
           <div  className={`${["d-flex align-items-end pb-2"]}`}>
             <div className={styles.grid}>
               <p>{magro ? <span>{imcSituation}</span> : null}</p>

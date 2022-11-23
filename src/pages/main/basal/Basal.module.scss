@@ -2,9 +2,17 @@
     display: flex;
 }
 
+
+.modal{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
 .titulo{
     font-size: 1.1rem;
     flex-wrap: nowrap;
+    margin-top: 35px;
 }
 
 .img{
@@ -21,6 +29,7 @@
     justify-items: center;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    position: relative;
 }
 
 .dark{
@@ -36,3 +45,9 @@
     }
    
 }
+
+@media screen and (max-width: 1314px) {
+    .boxImc{
+        margin-bottom: 20px;
+    }
+  }

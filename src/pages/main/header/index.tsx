@@ -19,11 +19,9 @@ function BrandExample({setMode,mode}:Props) {
   return (
     <>
      <div  className={`${mode === 'dark'? styles["dark"]:styles["light"]}`}>
-      <Navbar className={styles.navbar}>
-        <Container>
-          <Navbar.Brand>
-            <div className='d-flex'>
-    
+      <div className={styles.navbar}>
+            <div>
+            {mode=='light'?(
               <button  onClick={()=>changeMode('dark')} className={styles.iconeMoon}>
               <img
               alt=""
@@ -34,21 +32,21 @@ function BrandExample({setMode,mode}:Props) {
             />
               </button>
             
-   
+            ):
+            (
               <button  onClick={()=>changeMode('light')}  className={styles.iconeSun}>
-               <img
-              alt=""
-              src={sun}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />
-              </button>
+              <img
+             alt=""
+             src={sun}
+             width="30"
+             height="30"
+             className="d-inline-block align-top"
+           />
+             </button>
+            )}
+          
                  </div>
-     
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
+      </div>
       </div>
     </>
   );

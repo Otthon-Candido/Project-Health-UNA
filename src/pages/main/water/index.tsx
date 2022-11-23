@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Water.module.scss";
 import Bottle from "../../../assets/garrafa-de-agua.png";
 import WaterGlass from "../../../assets/copo-de-agua.png";
-import Example from "../modal";
+import ModalComponent from "../modal";
 
 interface Props {
   peso: number | null;
@@ -61,12 +61,15 @@ export default function Water(props: Props) {
       {cond ? (
         <div className={styles.boxImc}>
           
-          <div className="w-100 d-flex justify-content-end p-2">   
-          <Example   mode={mode} type={"water"}/> 
+          <div className={styles.modal}>   
+          <ModalComponent   mode={mode} type={"water"}/> 
           </div>
           
             <div className={styles.conteudoImc}>
-              <p className={styles.titulo}>Seu consumo ideal é de: {litros} litros de água por dia</p>
+              <div className={styles.divTitulo}>
+              <h3 className={styles.titulo}>Seu consumo ideal é de:</h3>
+              <h3 className={styles.titulo}> {litros} litros de água por dia</h3>
+              </div>
               <div className={styles.dflex}>
                 <p className={styles.textWater}>{copos} copos de 300 ml por dia</p>
                 <img className={styles.bottleImg} src={WaterGlass} alt="" />

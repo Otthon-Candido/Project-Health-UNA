@@ -1,18 +1,9 @@
-.flex{
-    display: flex;
-    justify-items: center;
-    align-items: end;
+.img{
+    margin-right: 20px;
 }
 
-.modal{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-  }
-
-.grid{
-    justify-items: center;
-    display: grid;
+.text{
+    margin-right: 5px;
 }
 
 .titulo{
@@ -23,14 +14,22 @@
 
 .boxImc{
     width: 387px;
-    height: 180px;
+    height: 390px;
     background-color: #3AE3CB;
     color: white;
+    display: grid;
+    justify-items: center;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     position: relative;
-    padding-bottom: 20px;
+    margin-top: 20px;
 }
+
+.modal{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
 
 .dark{
     .boxImc{
@@ -49,5 +48,6 @@
 @media screen and (max-width: 1314px) {
     .boxImc{
         margin-bottom: 20px;
+        margin-top: 0px;
     }
   }

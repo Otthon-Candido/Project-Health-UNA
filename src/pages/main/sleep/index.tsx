@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Sleep.module.scss";
 import sleepImg from "../../../assets/sono.png";
 import classNames from "classnames";
-import Example from "../modal";
+import ModalComponent from "../modal";
 
 interface Props {
   idade: number | null;
@@ -65,8 +65,8 @@ export default function Sleep(props: Props) {
     <div className={`${mode === 'dark'? styles["dark"]:styles["light"]} ${["w-100 d-flex justify-content-end"]}`}>
       {cond ? (
         <div className={styles.boxImc}>
-        <div  className={`${["w-100 d-flex justify-content-end p-2"]}`}> 
-          <Example   mode={mode} type={"sleep"}/> 
+        <div  className={styles.modal}> 
+          <ModalComponent   mode={mode} type={"sleep"}/> 
           </div>
         <div className="d-grid  justify-content-center align-items-center">
       

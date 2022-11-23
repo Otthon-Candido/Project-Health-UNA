@@ -5,9 +5,21 @@
     text-decoration: none;
 }
 
-.titulo{
-    width: 180px;
-    padding-bottom: 12px;
+.modal{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .divTitulo{
+   margin-bottom: 15px;
+  }
+
+  .titulo{
+    font-size: 1.1rem;
+    flex-wrap: nowrap;
+    width: 250px;
+    text-align: center;
 }
 
 .boxImc{
@@ -18,12 +30,15 @@
     padding-bottom: 10px;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    position: relative;
+    padding-bottom: 25px;
 }
 
 .conteudoImc{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 15px;
 }
 
 .dflex{
@@ -57,3 +72,8 @@ hr{
         }
 }
 
+@media screen and (max-width: 1314px) {
+    .boxImc{
+        margin-bottom: 20px;
+    }
+  }
