@@ -13,6 +13,15 @@ p{
 
 } 
 
+a{
+    color: white!important;
+    text-decoration-color:white!important;
+}
+
+a:hover{
+    font-weight: bold;
+}
+
 .light{
     .button{
         background-color: #0365AB!important;
