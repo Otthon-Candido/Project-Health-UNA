@@ -112,7 +112,7 @@ function ModalComponent(props:Props) {
         {type=="energetic" && <div>
         A dieta montada foi de acordo com o método 33%, ou seja, você deve ingerir 33% de kcal de cada macronutriente (proteina, carboidrato e gordura). <br />
         É importante ressaltar a importância de um nutricionista, porque cada pessoa deve seguir uma dieta específica. O intuito dos dados apresentados é ajudar quem quer começar e não sabe como, mas que futuramente vai buscar um profissional.
-        Para ajudar, nós da SaudeUNA recomendamos a <a className='ancora' target="_blank" href="https://www.cfn.org.br/wp-content/uploads/2017/03/taco_4_edicao_ampliada_e_revisada.pdf">Tabela Brasileira de Composição de Alimentos</a> e o vídeo do <a className='ancora' target="_blank" href="https://www.youtube.com/watch?v=wJBof_K85YY">Renato Cariani, de como montar sua dieta.</a>
+        Para ajudar, nós da SaudeUNA recomendamos a <a target="_blank" href="https://www.cfn.org.br/wp-content/uploads/2017/03/taco_4_edicao_ampliada_e_revisada.pdf">Tabela Brasileira de Composição de Alimentos</a> e o vídeo do <a  target="_blank" href="https://www.youtube.com/watch?v=wJBof_K85YY">Renato Cariani, de como montar sua dieta.</a>
         </div>} 
         </ModalBody>
         <ModalFooter>
