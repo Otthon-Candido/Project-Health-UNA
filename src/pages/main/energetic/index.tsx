@@ -64,7 +64,7 @@ export default function Energetic(props: Props) {
 {cond ? (
      <div className={styles.boxImc}>
 <div className={styles.modal}> 
-<ModalComponent   mode={mode} type={"basal"}/> 
+<ModalComponent   mode={mode} type={"energetic"}/> 
 </div>
 <h3 className={styles.titulo}>Quantidade que deve consumir de:</h3>
 
@@ -82,7 +82,7 @@ export default function Energetic(props: Props) {
 
 <div className="d-flex align-items-center">
 <img className={styles.img} src={lipidios} alt="" />
-<h4 className={styles.text} >Lipídios:</h4>
+<h4 className={styles.text} >Gordura:</h4>
 <p>{lipidioValue} gramas/dia</p>
 </div>
 </div>
