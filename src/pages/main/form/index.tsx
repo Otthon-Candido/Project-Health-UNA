@@ -146,7 +146,7 @@ export default function Form({
           type="text"
           id="peso"
           name="peso"
-          maxLength={3}
+          maxLength={4}
           placeholder="Peso"
           onChange={()=>handleChange('peso')}
         />
